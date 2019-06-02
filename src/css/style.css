@@ -46,7 +46,6 @@ main {
   top: 16px;
   right: 23px;
   background: var(--gradient);
-  transition: background 0.3s;
   height: 34px;
   width: 86px;
   border-radius: 16px;
