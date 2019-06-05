@@ -35,6 +35,7 @@ main {
     position: absolute;
     top: 4px;
     left: -4px;
+    transition: transform 0.2s;
     z-index: -1; }
   .btn:hover {
     transform: translateX(-8px) translateY(8px); }
@@ -46,7 +47,7 @@ main {
   top: 16px;
   right: 23px;
   background: var(--gradient);
-  transition: background 0.3s;
+  transition: transform 0.2s;
   height: 34px;
   width: 86px;
   border-radius: 16px;
