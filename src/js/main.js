@@ -187,7 +187,7 @@ function itemOnClick(){
                                 </li>
                             </ul>
                         </div>
-                        <img src="src\\img\\Icon-1@2X.png" class="bin-btn" onclick="deleteItem(${item.dataset.key})">
+                        <img src="src/img/Icon-1@2X.png" class="bin-btn" onclick="deleteItem(${item.dataset.key})">
                     </div>
                 </div>`;
                 if(!isOpened){
