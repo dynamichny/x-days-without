@@ -35,6 +35,7 @@ main {
     position: absolute;
     top: 4px;
     left: -4px;
+    transition: transform 0.2s;
     z-index: -1; }
   .btn:hover {
     transform: translateX(-8px) translateY(8px); }
@@ -46,6 +47,7 @@ main {
   top: 16px;
   right: 23px;
   background: var(--gradient);
+  transition: transform 0.2s;
   height: 34px;
   width: 86px;
   border-radius: 16px;
@@ -86,7 +88,12 @@ header {
   .itemList .item {
     padding: 7px 10px 20px 10px;
     background: white;
-    border-radius: 10px; }
+    border-radius: 10px;
+    transition: background 0.15s ease-in-out;
+  }
+    .item:hover{
+      background: rgba(255, 255, 255, 0.774);
+    }
     .itemList .item h2 {
       font-size: 3.6rem;
       font-weight: 400;

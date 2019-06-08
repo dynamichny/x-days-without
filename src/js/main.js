@@ -4,6 +4,7 @@ const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 
 const items = JSON.parse(localStorage.getItem('items')) || [];
 let currentColor = JSON.parse(localStorage.getItem('color')) || '';
 var interval;
+let isOpened = false;
 const colors = [
     'nothing there'
     ['#fad0c4','#ffd1ff'],
@@ -128,8 +129,9 @@ function itemOnClick(){
         item.addEventListener('click', (e)=>{
             let div = document.createElement('div');
             div.classList.add('itemDescription');
-            document.querySelector('body').appendChild(div);            
-            interval = setInterval(function(){
+            document.querySelector('body').appendChild(div);
+            isOpened = true;         
+            function updateTime(){
                 let currentDate  = new Date();
                 let milisecDiff = Math.abs(new Date() - new Date(items[item.dataset.key].date.replace(/-/g,'/')));
                 let secDiff = milisecDiff / 1000;
@@ -185,11 +187,15 @@ function itemOnClick(){
                                 </li>
                             </ul>
                         </div>
-                        <img src="src\\img\\Icon-1@2X.png" class="bin-btn" onclick="deleteItem(${item.dataset.key})">
+                        <img src="src\\img\\Icon-1@2x.png" class="bin-btn" onclick="deleteItem(${item.dataset.key})">
                     </div>
                 </div>`;
-            }, 1000)
-            
+                if(!isOpened){
+                    return;
+                }
+                setTimeout(updateTime, 1000)
+            }
+            updateTime();
         });
     });
 }
@@ -197,7 +203,7 @@ function itemOnClick(){
 
 function removeItemDescription(){
     document.querySelector('body').removeChild(document.querySelector('.itemDescription'));
-    clearInterval(interval)
+    isOpened = false;
 }
 
 
